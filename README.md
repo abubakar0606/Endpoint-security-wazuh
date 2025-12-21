@@ -35,3 +35,14 @@ This project is part of my Cybersecurity Internship at Internee.pk.
 - Threat Intelligence Awareness
 
 ---
+
+---
+
+## 📊 Data Sources
+- Sysmon logs for monitoring system activity
+- MalwareBazaar for malware threat intelligence
+
+---
+
+## 📌 Conclusion
+This project helped me understand how endpoint security tools like Wazuh detect threats, monitor systems, and generate alerts to improve organizational security posture.
