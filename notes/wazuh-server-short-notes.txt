@@ -1,0 +1,57 @@
+📘 Wazuh Server Installation
+Wazuh is an open-source Endpoint Detection and Response (EDR) and SIEM tool used to monitor and protect systems.
+The Wazuh server collects security data from agents, analyzes logs, and generates alerts when suspicious activity or threats are detected.
+
+🔹 Components of Wazuh Server
+
+Wazuh Manager:
+Receives logs from agents, applies security rules, and generates alerts.
+
+Filebeat:
+Securely forwards alerts and events from the Wazuh manager to the Wazuh Indexer.
+
+🔹 Installation Requirements
+
+Root user privileges
+
+Linux system (Ubuntu/Debian)
+
+Internet connection
+
+Required ports must be open
+
+🔹 Adding Wazuh Repository
+apt-get install gnupg apt-transport-https
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --import
+echo "deb https://packages.wazuh.com/4.x/apt/ stable main" > /etc/apt/sources.list.d/wazuh.list
+apt-get update
+
+🔹 Installing Wazuh Manager
+apt-get install wazuh-manager
+🔹 Installing and Configuring Filebeat
+
+apt-get install filebeat
+
+🔹 Starting Services
+systemctl enable wazuh-manager
+systemctl start wazuh-manager
+systemctl enable filebeat
+systemctl start filebeat
+
+
+🔹 Single-Node vs Multi-Node Deployment
+
+Single-Node:
+All components on one server (lab and learning purpose).
+
+Multi-Node Cluster:
+Master and worker nodes for scalability and high availability.
+
+Cluster status can be checked using:
+
+/var/ossec/bin/cluster_control -l
+
+
+
+
+The Wazuh server collects, analyzes, and forwards security events from agents to detect threats and generate alerts.
